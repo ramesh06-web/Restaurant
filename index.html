@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ember & Oak — A modern fine-dining restaurant experience. Reserve your table today." />
+  <meta name="theme-color" content="#1a1a1a" />
+  <title>Ember &amp; Oak — Fine Dining</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =============================================
+       NAVIGATION
+  ============================================= -->
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="nav-container">
+
+        <!-- Brand Logo -->
+        <a href="#hero" class="nav-logo" aria-label="Ember & Oak — return to top">
+          <span class="logo-icon" aria-hidden="true">🔥</span>
+          <span class="logo-text">Ember <span class="logo-amp">&amp;</span> Oak</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links" role="list">
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- CTA Button -->
+        <a href="#reservation" class="btn btn-primary nav-cta">Book a Table</a>
+
+        <!-- Hamburger Toggle (mobile) -->
+        <button
+          class="hamburger"
+          id="hamburgerBtn"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <ul class="mobile-nav-links" role="list">
+          <li><a href="#menu" class="mobile-nav-link">Menu</a></li>
+          <li><a href="#about" class="mobile-nav-link">About</a></li>
+          <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+          <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+          <li><a href="#reservation" class="mobile-nav-link mobile-cta">Book a Table</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- =============================================
+         HERO SECTION
+    ============================================= -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Est. 2009 · Farm to Table</p>
+        <h1 class="hero-heading" id="hero-heading">
+          Where Every Flame<br />
+          <em>Tells a Story</em>
+        </h1>
+        <p class="hero-sub">
+          Wood-fired cuisine crafted from seasonal ingredients, served in an atmosphere that turns dinner into memory.
+        </p>
+        <div class="hero-actions">
+          <a href="#reservation" class="btn btn-primary btn-lg">Reserve a Table</a>
+          <a href="#menu" class="btn btn-outline btn-lg">Explore Menu</a>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="hero-scroll" aria-hidden="true">
+          <span class="scroll-dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         STATS BAR
+    ============================================= -->
+    <section class="stats-bar" aria-label="Restaurant highlights">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Years of Excellence</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">48</span>
+            <span class="stat-label">Seasonal Dishes</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Michelin Stars</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">200+</span>
+            <span class="stat-label">Wine Labels</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         MENU SECTION
+    ============================================= -->
+    <section class="menu-section section" id="menu" aria-labelledby="menu-heading">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-eyebrow">What We Serve</p>
+          <h2 class="section-title" id="menu-heading">Our Menu</h2>
+          <p class="section-desc">Seasonally inspired dishes crafted with locally sourced ingredients and a passion for bold, honest flavors.</p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="menu-controls">
+          <div class="filter-tabs" role="tablist" aria-label="Filter menu by category">
+            <button class="filter-btn active" role="tab" data-filter="all" aria-selected="true">All</button>
+            <button class="filter-btn" role="tab" data-filter="starters" aria-selected="false">Starters</button>
+            <button class="filter-btn" role="tab" data-filter="mains" aria-selected="false">Mains</button>
+            <button class="filter-btn" role="tab" data-filter="desserts" aria-selected="false">Desserts</button>
+            <button class="filter-btn" role="tab" data-filter="drinks" aria-selected="false">Drinks</button>
+          </div>
+
+          <!-- Live Search -->
+          <div class="search-wrapper">
+            <label for="menuSearch" class="sr-only">Search dishes</label>
+            <svg class="search-icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input
+              type="search"
+              id="menuSearch"
+              class="search-input"
+              placeholder="Search dishes or ingredients…"
+              aria-label="Search menu dishes"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="menu-grid" id="menuGrid" aria-live="polite" aria-label="Menu items">
+
+          <!-- STARTERS -->
+          <article class="menu-card" data-category="starters" data-tags="vegetarian" aria-label="Heirloom Tomato Bruschetta">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=400&q=80" alt="Heirloom Tomato Bruschetta on toasted sourdough" class="card-img" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Starters</span>
+                <span class="card-price">$14</span>
+              </div>
+              <h3 class="card-title">Heirloom Tomato Bruschetta</h3>
+              <p class="card-desc" data-ingredients="tomato basil sourdough burrata olive oil">Vine-ripened heirloom tomatoes, torn basil, burrata cream, and aged balsamic on charred sourdough.</p>
+              <div class="card-tags">
+                <span class="tag tag-veg">Vegetarian</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="starters" aria-label="Seared Scallops">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&q=80" alt="Pan-seared scallops with cauliflower purée" class="card-img" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Starters</span>
+                <span class="card-price">$22</span>
+              </div>
+              <h3 class="card-title">Seared Scallops</h3>
+              <p class="card-desc" data-ingredients="scallops cauliflower pancetta lemon caper butter">Hand-dived scallops, caramelised cauliflower purée, crispy pancetta, and a caper-lemon beurre blanc.</p>
+              <div class="card-tags">
+                <span class="tag tag-gf">Gluten-Free</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="starters" data-tags="vegan" aria-label="Roasted Beet Salad">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80" alt="Roasted beet and walnut salad" class="card-img" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Starters</span>
+                <span class="card-price">$16</span>
+              </div>
+              <h3 class="card-title">Roasted Beet &amp; Walnut Salad</h3>
+              <p class="card-desc" data-ingredients="beet walnut arugula orange vinaigrette">Heritage beets, candied walnuts, peppery arugula, and blood orange vinaigrette on a smoked almond cream.</p>
+              <div class="card-tags">
+                <span class="tag tag-vegan">Vegan</span>
+                <span class="tag tag-gf">Gluten-Free</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- MAINS -->
+          <article class="menu-card" data-category="mains" aria-label="Wood-Fired Ribeye">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=400&q=80" alt="Wood-fired ribeye steak with bone marrow butter" class="card-img" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Mains</span>
+                <span class="card-price">$58</span>
+              </div>
+              <h3 class="card-title">Wood-Fired Ribeye</h3>
+              <p class="card-desc" data-ingredients="ribeye steak bone marrow truffle potato rosemary">28-day dry-aged prime ribeye over oak embers, bone marrow butter, truffle potato gratin, charred rosemary jus.</p>
+              <div class="card-tags">
+                <span class="tag tag-gf">Gluten-Free</span>
+                <span class="tag tag-signature">Signature</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="mains" aria-label="Pan-Roasted Duck Breast">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=400&q=80" alt="Pan-roasted duck breast with cherry sauce" class="card-img" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Mains</span>
+                <span class="card-price">$46</span>
+              </div>
+              <h3 class="card-title">Pan-Roasted Duck Breast</h3>
+              <p class="card-desc" data-ingredients="duck cherry red wine dauphinoise potato thyme">Seared Gressingham duck, Morello cherry and red wine reduction, potato dauphinoise, wilted spinach.</p>
+              <div class="card-tags">
+                <span class="tag tag-gf">Gluten-Free</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="mains" data-tags="vegetarian" aria-label="Wild Mushroom Risotto">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=400&q=80" alt="Wild mushroom risotto with truffle oil" class="card-img" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Mains</span>
+                <span class="card-price">$36</span>
+              </div>
+              <h3 class="card-title">Wild Mushroom Risotto</h3>
+              <p class="card-desc" data-ingredients="mushroom arborio rice parmesan truffle cream shallot">Porcini, chanterelle &amp; truffle risotto with aged Parmigiano-Reggiano and white truffle oil.</p>
+              <div class="card-tags">
+                <span class="tag tag-veg">Vegetarian</span>
+                <span class="tag tag-gf">Gluten-Free</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="mains" aria-label="Atlantic Halibut">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&q=80" alt="Atlantic halibut with clam chowder velouté" class="card-img" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Mains</span>
+                <span class="card-price">$52</span>
+              </div>
+              <h3 class="card-title">Atlantic Halibut</h3>
+              <p class="card-desc" data-ingredients="halibut clam chowder leek potato dill">Line-caught halibut fillet, smoked clam chowder velouté, braised leek, crispy capers, dill oil.</p>
+              <div class="card-tags">
+                <span class="tag tag-gf">Gluten-Free</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- DESSERTS -->
+          <article class="menu-card" data-category="desserts" data-tags="vegetarian" aria-label="Warm Chocolate Fondant">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&q=80" alt="Warm dark chocolate fondant with vanilla ice cream" class="card-img" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Desserts</span>
+                <span class="card-price">$18</span>
+              </div>
+              <h3 class="card-title">Warm Chocolate Fondant</h3>
+              <p class="card-desc" data-ingredients="dark chocolate butter egg cream vanilla ice cream salted caramel">Valrhona dark chocolate, molten centre, vanilla bean ice cream, salted caramel, praline crumb.</p>
+              <div class="card-tags">
+                <span class="tag tag-veg">Vegetarian</span>
+                <span class="tag tag-signature">Signature</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="desserts" data-tags="vegetarian" aria-label="Crème Brûlée">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1470324161839-ce2bb6fa6bc3?w=400&q=80" alt="Classic vanilla crème brûlée" class="card-img" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Desserts</span>
+                <span class="card-price">$14</span>
+              </div>
+              <h3 class="card-title">Classic Crème Brûlée</h3>
+              <p class="card-desc" data-ingredients="vanilla cream egg yolk sugar bourbon">Madagascar vanilla bean custard, caramelised sugar crust, Bourbon macerated berries.</p>
+              <div class="card-tags">
+                <span class="tag tag-veg">Vegetarian</span>
+                <span class="tag tag-gf">Gluten-Free</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- DRINKS -->
+          <article class="menu-card" data-category="drinks" aria-label="Ember Negroni">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=400&q=80" alt="Ember Negroni cocktail with smoke" class="card-img" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Drinks</span>
+                <span class="card-price">$16</span>
+              </div>
+              <h3 class="card-title">The Ember Negroni</h3>
+              <p class="card-desc" data-ingredients="gin campari vermouth orange bitters smoke">House-smoked gin, Campari, sweet vermouth, orange bitters, served with a flaming orange peel.</p>
+              <div class="card-tags">
+                <span class="tag tag-signature">Signature</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="drinks" data-tags="vegan" aria-label="Seasonal Mocktail">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80" alt="Fresh seasonal mocktail with herbs" class="card-img" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Drinks</span>
+                <span class="card-price">$10</span>
+              </div>
+              <h3 class="card-title">Garden Spritz Mocktail</h3>
+              <p class="card-desc" data-ingredients="cucumber elderflower mint lime soda tonic">Cucumber, elderflower cordial, fresh mint, lime, and sparkling tonic. Refreshing and zero-proof.</p>
+              <div class="card-tags">
+                <span class="tag tag-vegan">Vegan</span>
+                <span class="tag tag-gf">Gluten-Free</span>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /menu-grid -->
+
+        <!-- Empty state message -->
+        <div class="menu-empty" id="menuEmpty" aria-live="polite" hidden>
+          <p>No dishes match your search. Try a different keyword or category.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================
+         ABOUT SECTION
+    ============================================= -->
+    <section class="about-section section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- Image Column -->
+          <div class="about-images" aria-hidden="true">
+            <div class="about-img-main">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Chef plating a dish in an open kitchen" loading="lazy" />
+            </div>
+            <div class="about-img-secondary">
+              <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&q=80" alt="Rustic wood-fired oven at Ember and Oak" loading="lazy" />
+            </div>
+            <div class="about-badge">
+              <span class="badge-year">Est.</span>
+              <span class="badge-num">2009</span>
+            </div>
+          </div>
+
+          <!-- Text Column -->
+          <div class="about-content">
+            <p class="section-eyebrow">Our Story</p>
+            <h2 class="section-title" id="about-heading">A Table, a Fire &amp; a Philosophy</h2>
+            <p class="about-text">
+              Ember &amp; Oak was born from a single conviction: that the most honest cooking happens over an open flame. In 2009, Chef Elena Vasquez left a celebrated kitchen in Lyon to return to her roots in the Pacific Northwest, carrying with her a reverence for ingredient and technique that she'd refined across two continents.
+            </p>
+            <p class="about-text">
+              Our wood-fired hearth is the heart of everything. We source from fewer than 30 farms within 150 miles, adjusting the menu as seasons turn. What grows together, goes together — and nothing on your plate travelled further than it had to.
+            </p>
+
+            <ul class="about-pillars" aria-label="Our core values">
+              <li class="pillar">
+                <span class="pillar-icon" aria-hidden="true">🌿</span>
+                <div>
+                  <strong>Hyper-Local Sourcing</strong>
+                  <p>Every ingredient traced to its origin, every producer known by name.</p>
+                </div>
+              </li>
+              <li class="pillar">
+                <span class="pillar-icon" aria-hidden="true">🔥</span>
+                <div>
+                  <strong>Wood-Fire Mastery</strong>
+                  <p>Live fire is our primary cooking medium — no gas, no shortcuts.</p>
+                </div>
+              </li>
+              <li class="pillar">
+                <span class="pillar-icon" aria-hidden="true">🍷</span>
+                <div>
+                  <strong>Curated Wine Program</strong>
+                  <p>200+ labels from small natural producers, thoughtfully paired.</p>
+                </div>
+              </li>
+            </ul>
+
+            <a href="#reservation" class="btn btn-primary">Reserve Your Experience</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         RESERVATION / CONTACT SECTION
+    ============================================= -->
+    <section class="reservation-section section" id="reservation" aria-labelledby="reservation-heading">
+      <div class="container">
+        <div class="section-header section-header--light">
+          <p class="section-eyebrow">Join Us</p>
+          <h2 class="section-title" id="reservation-heading">Book a Table</h2>
+          <p class="section-desc">Reservations are recommended. Walk-ins welcome based on availability.</p>
+        </div>
+
+        <!-- Form wrapper — swapped for success state by JS -->
+        <div class="reservation-wrapper">
+          <form
+            class="reservation-form"
+            id="reservationForm"
+            novalidate
+            aria-label="Table reservation form"
+          >
+
+            <div class="form-row">
+              <!-- Date -->
+              <div class="form-group">
+                <label for="resDate" class="form-label">Date <span aria-hidden="true">*</span></label>
+                <input
+                  type="date"
+                  id="resDate"
+                  name="date"
+                  class="form-control"
+                  required
+                  aria-required="true"
+                  aria-describedby="resDate-error"
+                />
+                <span class="form-error" id="resDate-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Time -->
+              <div class="form-group">
+                <label for="resTime" class="form-label">Time <span aria-hidden="true">*</span></label>
+                <select id="resTime" name="time" class="form-control" required aria-required="true" aria-describedby="resTime-error">
+                  <option value="">Select a time</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="12:30">12:30 PM</option>
+                  <option value="13:00">1:00 PM</option>
+                  <option value="13:30">1:30 PM</option>
+                  <option value="14:00">2:00 PM</option>
+                  <option value="17:30">5:30 PM</option>
+                  <option value="18:00">6:00 PM</option>
+                  <option value="18:30">6:30 PM</option>
+                  <option value="19:00">7:00 PM</option>
+                  <option value="19:30">7:30 PM</option>
+                  <option value="20:00">8:00 PM</option>
+                  <option value="20:30">8:30 PM</option>
+                  <option value="21:00">9:00 PM</option>
+                </select>
+                <span class="form-error" id="resTime-error" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <!-- Party Size -->
+              <div class="form-group">
+                <label for="partySize" class="form-label">Party Size <span aria-hidden="true">*</span></label>
+                <select id="partySize" name="partySize" class="form-control" required aria-required="true" aria-describedby="partySize-error">
+                  <option value="">Number of guests</option>
+                  <option value="1">1 Guest</option>
+                  <option value="2">2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="5">5 Guests</option>
+                  <option value="6">6 Guests</option>
+                  <option value="7">7 Guests</option>
+                  <option value="8">8 Guests</option>
+                  <option value="9+">9+ Guests (call us)</option>
+                </select>
+                <span class="form-error" id="partySize-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Name -->
+              <div class="form-group">
+                <label for="resName" class="form-label">Full Name <span aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="resName"
+                  name="name"
+                  class="form-control"
+                  placeholder="Jane Smith"
+                  required
+                  aria-required="true"
+                  aria-describedby="resName-error"
+                  autocomplete="name"
+                />
+                <span class="form-error" id="resName-error" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <!-- Phone -->
+              <div class="form-group">
+                <label for="resPhone" class="form-label">Phone Number <span aria-hidden="true">*</span></label>
+                <input
+                  type="tel"
+                  id="resPhone"
+                  name="phone"
+                  class="form-control"
+                  placeholder="+1 (555) 000-0000"
+                  required
+                  aria-required="true"
+                  aria-describedby="resPhone-error"
+                  autocomplete="tel"
+                />
+                <span class="form-error" id="resPhone-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="resEmail" class="form-label">Email Address</label>
+                <input
+                  type="email"
+                  id="resEmail"
+                  name="email"
+                  class="form-control"
+                  placeholder="jane@example.com"
+                  aria-describedby="resEmail-error"
+                  autocomplete="email"
+                />
+                <span class="form-error" id="resEmail-error" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <!-- Special Requests -->
+            <div class="form-group form-group--full">
+              <label for="specialRequests" class="form-label">Special Requests</label>
+              <textarea
+                id="specialRequests"
+                name="specialRequests"
+                class="form-control form-textarea"
+                placeholder="Dietary requirements, allergies, celebrations, seating preferences…"
+                rows="4"
+                aria-describedby="specialRequests-hint"
+              ></textarea>
+              <span class="form-hint" id="specialRequests-hint">Optional — we'll do our best to accommodate.</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+              Confirm Reservation
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
+
+          </form>
+
+          <!-- Success State (hidden by default, shown by JS) -->
+          <div class="reservation-success" id="reservationSuccess" hidden aria-live="polite">
+            <div class="success-icon" aria-hidden="true">✓</div>
+            <h3 class="success-title">You're Booked!</h3>
+            <p class="success-msg" id="successMsg">
+              <!-- Populated dynamically by JS -->
+            </p>
+            <p class="success-sub">A confirmation will be sent to your email. We look forward to seeing you.</p>
+            <button class="btn btn-outline" id="newReservationBtn">Make Another Reservation</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================
+         GALLERY SECTION
+    ============================================= -->
+    <section class="gallery-section section" id="gallery" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Visual Stories</p>
+          <h2 class="section-title" id="gallery-heading">A Feast for the Eyes</h2>
+          <p class="section-desc">A glimpse of the plates, the space, and the moments that make Ember &amp; Oak worth every mile.</p>
+        </div>
+
+        <div class="gallery-grid" role="list" aria-label="Restaurant photo gallery">
+          <figure class="gallery-item gallery-item--tall" role="listitem">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Chef at work in the open kitchen" loading="lazy" />
+            <figcaption class="gallery-caption">The Open Kitchen</figcaption>
+          </figure>
+          <figure class="gallery-item" role="listitem">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=500&q=80" alt="Wood-fired hearth glowing in the dining room" loading="lazy" />
+            <figcaption class="gallery-caption">Our Wood-Fire Hearth</figcaption>
+          </figure>
+          <figure class="gallery-item" role="listitem">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=500&q=80" alt="Artfully plated main course" loading="lazy" />
+            <figcaption class="gallery-caption">Artful Plating</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-item--wide" role="listitem">
+            <img src="https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?w=800&q=80" alt="Elegant dining room with candlelit tables" loading="lazy" />
+            <figcaption class="gallery-caption">The Dining Room</figcaption>
+          </figure>
+          <figure class="gallery-item" role="listitem">
+            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=500&q=80" alt="Sommelier presenting a bottle of wine" loading="lazy" />
+            <figcaption class="gallery-caption">Wine &amp; Pairing</figcaption>
+          </figure>
+          <figure class="gallery-item" role="listitem">
+            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&q=80" alt="Warm chocolate fondant dessert" loading="lazy" />
+            <figcaption class="gallery-caption">Signature Desserts</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /main -->
+
+  <!-- =============================================
+       FOOTER / CONTACT
+  ============================================= -->
+  <footer class="site-footer" id="contact" role="contentinfo" aria-labelledby="footer-brand">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Brand Column -->
+          <div class="footer-col footer-col--brand">
+            <a href="#hero" class="footer-logo" id="footer-brand" aria-label="Ember & Oak — home">
+              <span aria-hidden="true">🔥</span> Ember &amp; Oak
+            </a>
+            <p class="footer-tagline">Wood-fired cuisine. Honest ingredients. Unforgettable evenings.</p>
+            <div class="social-links" aria-label="Social media links">
+              <a href="#" class="social-link" aria-label="Follow us on Instagram">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Follow us on Facebook">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Follow us on Twitter / X">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Watch us on YouTube">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hours Column -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Hours</h3>
+            <ul class="hours-list" aria-label="Opening hours">
+              <li><span>Monday</span><span>Closed</span></li>
+              <li><span>Tue – Thu</span><span>5:30 – 10 PM</span></li>
+              <li><span>Friday</span><span>5:30 – 11 PM</span></li>
+              <li><span>Saturday</span><span>12 – 3 PM &amp; 5:30 – 11 PM</span></li>
+              <li><span>Sunday</span><span>12 – 4 PM</span></li>
+            </ul>
+          </div>
+
+          <!-- Location Column -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Find Us</h3>
+            <address class="footer-address" aria-label="Restaurant address">
+              <p>214 Fireside Lane<br />Portland, OR 97201</p>
+              <a href="tel:+15034210988" class="footer-link">+1 (503) 421-0988</a>
+              <a href="mailto:hello@emberandoak.com" class="footer-link">hello@emberandoak.com</a>
+            </address>
+          </div>
+
+          <!-- Newsletter Column -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Stay in the Loop</h3>
+            <p class="footer-newsletter-desc">Seasonal menus, private events, and chef's notes — straight to your inbox.</p>
+            <form class="newsletter-form" id="newsletterForm" novalidate aria-label="Newsletter signup form">
+              <div class="newsletter-input-group">
+                <label for="newsletterEmail" class="sr-only">Your email address</label>
+                <input
+                  type="email"
+                  id="newsletterEmail"
+                  name="email"
+                  class="newsletter-input"
+                  placeholder="your@email.com"
+                  required
+                  aria-required="true"
+                  aria-describedby="newsletter-error"
+                  autocomplete="email"
+                />
+                <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                  </svg>
+                </button>
+              </div>
+              <span class="newsletter-error" id="newsletter-error" role="alert" aria-live="polite"></span>
+              <span class="newsletter-success" id="newsletter-success" hidden aria-live="polite">You're subscribed! Thank you.</span>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copy">
+          &copy; <span id="currentYear"></span> Ember &amp; Oak. All rights reserved.
+        </p>
+        <nav aria-label="Footer legal links">
+          <ul class="footer-legal-links" role="list">
+            <li><a href="#" class="footer-legal-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-legal-link">Terms of Service</a></li>
+            <li><a href="#" class="footer-legal-link">Accessibility</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" hidden>
+    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
